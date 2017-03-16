@@ -1,0 +1,65 @@
+<div class="col-12">
+
+  <h1>{{titulo}}</h1>
+
+</div>
+
+<br/>
+<form #frmCategoria="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-6 text-left">
+
+      <div class="form-group">
+        <label for="txtNombre">Nombre</label>
+        <input #txtNombre="ngModel"
+              name="nombre"
+              [(ngModel)]="categoria.nombre"
+              required
+              type="text" class="form-control">
+        <span *ngIf="!txtNombre.valid && txtNombre.touched"></span>
+        <input #txtId name="id" type="hidden" *ngIf="categoria._id" [value]="categoria._id"/>
+      </div>
+
+    </div>
+    <div class="col-md-6 text-left">
+
+      <div class="form-group">
+        <label for="cboTipo">Tipo</label>
+        <select  #cboTipo="ngModel"
+                  name="tipo"
+                  [(ngModel)]="categoria.tipo"
+                  required
+                  class="form-control">
+          <option [selected]="categoria.tipo == ''" value="">Seleccione</option>
+          <option [selected]="categoria.tipo == 'MAT'" value="MAT">Matematicas</option>
+          <option [selected]="categoria.tipo == 'LEN'" value="LEN">Lenguaje</option>
+          <option [selected]="categoria.tipo == 'QUIM'" value="QUIM">Química</option>
+          <option [selected]="categoria.tipo == 'FIS'" value="FIS">Física</option>
+          <option [selected]="categoria.tipo == 'OTR'" value="OTR">Otros</option>
+        </select>
+        <span *ngIf="!cboTipo.valid && cboTipo.touched"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-left">
+
+      <div class="form-group">
+        <label for="txtDescripcion">Descripción</label>
+        <textarea #txtDescripcion
+                  [(ngModel)]="categoria.descripcion"
+                  required
+                  name="descripcion"
+                  rows="4" cols="50"
+                  class="form-control">
+        </textarea>
+        <span *ngIf="!txtDescripcion.valid && txtDescripcion.touched"></span>
+      </div>
+
+    </div>
+    <div class="row">
+      <input type="submit" value="Grabar"
+              />
+    </div>
+  </div>
+</form>

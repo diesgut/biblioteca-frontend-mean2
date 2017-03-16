@@ -1,0 +1,45 @@
+<div class="col-12">
+
+  <h1>{{titulo}}</h1>
+
+  <button [routerLink]="['crear-categoria']" type="button" class="btn btn-primary pull-right">
+       Nuevo
+     </button>
+
+</div>
+
+
+<br/>
+
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th class="text-center">Nombre</th>
+      <th class="text-center">Tipo</th>
+      <th class="text-center">Descripción</th>
+      <th width="10">
+      </th>
+      <th width="10">
+      </th>
+      <th width="10">
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categorias">
+      <td class="text-left">{{categoria.nombre}}</td>
+      <td class="text-left">{{categoria.tipo}}</td>
+      <td class="text-left">{{categoria.descripcion}}</td>
+      <td>
+        <button [routerLink]="['/categoria',categoria._id]" type="button" class="btn btn-primary">Ver</button>
+      </td>
+      <td>
+        <button [routerLink]="['/editar-categoria',categoria._id]" type="button" class="btn btn-primary">Editar</button>
+      </td>
+      <td>
+        <button (click)="onDelete(categoria._id)" type="button" class="btn btn-danger">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
