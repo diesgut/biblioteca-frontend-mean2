@@ -1,5 +1,5 @@
 # BibliotecaFrontendMean2
-Proyecto frontend de la aplicación biblioteca, creado con mongo db, mongo express y node js.
+Proyecto frontend de la aplicación biblioteca, creado con angular 2.
 
 
 ## Development server
