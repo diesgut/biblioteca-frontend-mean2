@@ -49,14 +49,15 @@ export class CategoriaService {
     return this._http.delete(this.url+'categoria/'+id).map(res=>res.json());
   }
 
-  editCateforia(id:string, categoria:Categoria){
+  editCategoria(id:string,categoria:Categoria){
+    console.log('editCategoria');
     let json=JSON.stringify(categoria);
     let params=json;
     let header = new Headers({
       'Content-Type': 'application/json'
     });
-
-    return this._http.put(this.url + "categoria",params,{headers:header}).map(res=>res.json());
+    console.dir(categoria);
+    return this._http.put(this.url + "categoria/"+id,params,{headers:header}).map(res=>res.json());
   }
 
 }

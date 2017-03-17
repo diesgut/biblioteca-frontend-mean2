@@ -44,6 +44,7 @@ export class CategoriaAddComponent implements OnInit {
   onSubmit(){
     console.log('onSubmit ');
     console.dir(this.categoria);
+
     this._categoriaService.addCategoria(this.categoria).subscribe(
       response=>{
         this.categoria=response.categoria;
@@ -61,6 +62,7 @@ export class CategoriaAddComponent implements OnInit {
         }
       }
     );
+
   }
 
 }

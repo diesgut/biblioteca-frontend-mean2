@@ -68,5 +68,29 @@ export class CategoriaEditComponent implements OnInit {
     });
   }
 
+  onSubmit(){
+    console.log('onSubmit ');
+    console.dir(this.categoria);
+
+    this._categoriaService.editCategoria(this.categoria._id,this.categoria).subscribe(
+      response=>{
+        this.categoria=response.categoria;
+
+
+        if(!response.categoria){
+          alert('Error en el servidor');
+        }else{
+          this._router.navigate(['/']);
+        }
+      },error=>{
+        this.errorMensaje=<any>error;
+        if(this.errorMensaje!=null){
+          console.log(this.errorMensaje);
+        }
+      }
+    );
+
+  }
+
 
 }
