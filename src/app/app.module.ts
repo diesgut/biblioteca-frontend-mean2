@@ -10,7 +10,8 @@ import { CategoriaListComponent } from './components/categoria-list.component'
 import { CategoriaAddComponent } from './components/categoria-add.component'
 import { CategoriaDetailComponent } from './components/categoria-detail.component'
 import { CategoriaEditComponent } from './components/categoria-edit.component'
-
+import { HeaderComponent } from './components/header.component'
+import { BodyComponent } from './components/body.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { CategoriaEditComponent } from './components/categoria-edit.component'
     CategoriaListComponent,
     CategoriaAddComponent,
     CategoriaDetailComponent,
-    CategoriaEditComponent
+    CategoriaEditComponent,
+    HeaderComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
